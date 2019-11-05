@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+
+<h1><%= @task.title %></h1>
+
+<div class="details">
+  <p><%=  @task.details %></p>
+</div>
+
+<div class="completed">
+  <% if @task.completed %>
+  <p><i class="far fa-check-square"></i> This task is completed</p>
+  <% else %>
+  <p><i class="far fa-square"></i> This task is not completed yet</p>
+<% end %>
+</div>
+
+<div class="back">
+  <%= link_to "Back to list", tasks_path %>
+</div>
+
+<div class="delete">
+  <%= link_to "Edit this task", edit_task_path(@task) %>
+</div>
